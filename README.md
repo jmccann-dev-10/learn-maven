@@ -14,29 +14,32 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
 - [ ] I want it to be made for the command line.
 - [ ] I want to be able to specify column names until I give an empty line.
 - [ ] I want to be able to specify the type of data for each column.
+- [ ] Column types must include:
+  - first name
+  - last name
+  - date of birth
+  - street address
+  - city
+  - state
+  - zip
 - [ ] I want to specify how many rows to be created.
 - [ ] I want a csv to be created with randomized data.
+- [ ] I need it to be packaged as a jar, and the jar is executable
 
 ## 3. Project Notes
 <details>
-<summary>Repository</summary
+<summary>Repository</summary>
 
 [MDH Repo](https://nexus.health.state.mn.us/)
 
 ```
 <repositories>
     <repository>
-        <id>central</id>
-        <url>https://nexus.health.state.mn.us/repository/public/</url>
+        <id>mdh.nexus.repo</id>
+        <name>The MDH Nexus Repository</name>
+        <url>https://nexus.health.state.mn.us/repository/releases</url>
     </repository>
 </repositories>
-
-<pluginRepositories>
-    <pluginRepository>
-        <id>central</id>
-        <url>https://nexus.health.state.mn.us/repository/public/</url>
-    </pluginRepository>
-</pluginRepositories>
 ```
 </details>
 
@@ -52,8 +55,8 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
 
 [Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 
-Default Lifecycle:
-`validate > compile > test > package > verify > install > deploy`
+Default Lifecycle: `validate > compile > test > package > verify > install > deploy`<br>
+Additional Important Phase: `clean`
 
 </details>
 
