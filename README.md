@@ -13,18 +13,16 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
 - [ ] I need a project I can build CSV files on the fly.
 - [ ] I want it to be made for the command line.
 - [ ] I want to be able to specify column names until I give an empty line.
-- [ ] I want to be able to specify the type of data for each column.
-- [ ] Column types must include:
+- [ ] I want to be able to specify the type of data for each column
+- [ ] Data types should include at minimum:
   - first name
   - last name
-  - date of birth
+  - date
   - street address
-  - city
   - state
   - zip
 - [ ] I want to specify how many rows to be created.
 - [ ] I want a csv to be created with randomized data.
-- [ ] I need it to be packaged as a jar, and the jar is executable
 
 ## 3. Project Notes
 <details>
@@ -36,8 +34,8 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
 <repositories>
     <repository>
         <id>mdh.nexus.repo</id>
-        <name>The MDH Nexus Repository</name>
-        <url>https://nexus.health.state.mn.us/repository/releases</url>
+        <name>MDH Nexus Repo</name>
+        <url>https://nexus.health.state.mn.us/repository/public</url>
     </repository>
 </repositories>
 ```
@@ -50,6 +48,7 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
 
 </details>
 
+
 <details>
 <summary>Build</summary>
 
@@ -57,6 +56,7 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
 
 Default Lifecycle: `validate > compile > test > package > verify > install > deploy`<br>
 Additional Important Phase: `clean`
+
 
 </details>
 
